@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal.component';
@@ -11,7 +11,12 @@ import * as $ from 'jquery';
         NgbModule.forRoot(),
     ],
     declarations: [ModalComponent],
-    exports: [ModalComponent]
+    exports: [ModalComponent, NgbModule]
 })
 export class ModalModule {
+    public static forRoot(): ModuleWithProviders {
+         return {
+             ngModule: ModalModule
+            };
+        }
 }

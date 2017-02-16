@@ -32,7 +32,7 @@ import { HomeComponent } from './home';
     BrowserModule,
     FormsModule,
     HttpModule,
-    ModalModule,
+    ModalModule.forRoot(),
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }
     )
   ],
