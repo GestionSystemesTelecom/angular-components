@@ -169,11 +169,6 @@ module.exports = function (options) {
           exclude: [helpers.root('demo-app/src', 'styles')]
         },
 
-        {
-          test: /bootstrap\/dist\/js\/umd\//,
-          loader: 'imports?jQuery=jquery'
-        },
-
         /* Raw loader support for *.html
          * Returns file content as string
          *

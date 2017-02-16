@@ -28,18 +28,13 @@ Modal provider based on [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootst
 ```js
 module.exports = function (options) {
     // ...
-    module: {
-      rules: [
-          { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports?jQuery=jquery' }
-      ]
     plugins: [
-      new ProvidePlugin({
-        jQuery: 'jquery',
-        $: 'jquery',
-        jquery: 'jquery'
-      }),
+        new ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
+        }),
     ]
-    }
  // ...
 ```
 
