@@ -1,5 +1,5 @@
 {
-  "name": "components",
+  "name": "@gst/components",
   "version": "0.0.1",
   "description": "Set of Angular components",
   "main": "index.ts",
@@ -53,6 +53,9 @@
     "Components"
   ],
   "author": "Valérian Girard",
+  "contributors": [
+    {"name": "Jérémy Bolzonella", "email": "jeremy.bolzonella@cfast-web.fr"}
+  ],
   "license": "MIT",
   "dependencies": {
     "jquery": "^3.1.1"
