@@ -4,7 +4,7 @@ Modal provider based on [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootst
 
 # Installation
 
-* install library: `npm install @gst/component`
+* install library: `npm install gst-components`
 * add module import declaration
 
 ```typescript
