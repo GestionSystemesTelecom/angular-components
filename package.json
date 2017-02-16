@@ -1,6 +1,6 @@
 {
   "name": "gst-components",
-  "version": "0.0.1-beta.2",
+  "version": "0.0.1-beta.3",
   "description": "Set of Angular components",
   "main": "index.ts",
   "scripts": {
@@ -60,6 +60,7 @@
   ],
   "dependencies": {
     "jquery": "^3.1.1",
+    "@types/jquery": "^2.0.40",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.20"
   },
   "devDependencies": {
@@ -78,7 +79,6 @@
     "@angularclass/hmr-loader": "~3.0.2",
     "@types/hammerjs": "^2.0.33",
     "@types/jasmine": "^2.2.34",
-    "@types/jquery": "^2.0.40",
     "@types/node": "^7.0.0",
     "@types/selenium-webdriver": "~2.53.39",
     "@types/source-map": "^0.5.0",
