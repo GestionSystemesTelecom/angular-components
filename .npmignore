@@ -1,6 +1,7 @@
 config/
 demo-app/
 .editorconfig
+.gitattributes
 .nvmrc
 .travis.yml
 karma.conf.js
