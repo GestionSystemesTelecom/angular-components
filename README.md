@@ -1,3 +1,8 @@
+# Dependencies
+
+* [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap)
+* [jquery](https://github.com/jquery/jquery)
+
 # Demo App
 
 Nothing really heavy, just some components that we can't found yet
