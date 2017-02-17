@@ -19,6 +19,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
         Home
       </a>
+      <a [routerLink]=" ['./lazy-town'] "
+        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
+        Lazy Module
+      </a>
     </nav>
 
     <main>

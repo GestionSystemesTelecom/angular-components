@@ -9,6 +9,7 @@ Modal provider based on [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootst
 
 ```typescript
   import { AppComponent } from './app.component';
+  import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   import { ModalModule } from 'gst-components';
 
   @NgModule({
@@ -16,6 +17,7 @@ Modal provider based on [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootst
       AppComponent
     ],
     imports: [
+      NgbModule.forRoot(),
       ModalModule.forRoot()
     ],
     providers: [],
@@ -40,7 +42,7 @@ module.exports = function (options) {
 
 # Usage
 
-* Add modals container to AppComponent (outer div is not optional)
+* Add modals container to AppComponent (outer div is mandatory)
 
 ```html
 <div class="modal-outer-template-div">
