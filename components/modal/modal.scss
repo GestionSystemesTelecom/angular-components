@@ -1,5 +1,7 @@
 $media-query-tablet: 'only screen and (max-width: 1440px)';
 $media-query-phone: 'only screen and (max-device-width: 480px), (max-width: 911px)';
+$color-green: #48a770;
+$color-grey: #d9dde5;
 
 body {
     &.gst-modal-open {
@@ -81,6 +83,17 @@ body {
             background-color: whitesmoke;
             height: 40px;
 
+            &:before {
+                content: '';
+                position: absolute;
+                width: calc(100% - 30px);
+                border-top-width: 1px;
+                border-top-style: solid;
+                border-top-color: $color-grey;
+                left: 15px;
+                top: 21px;
+            }
+
             h4 {
                 margin: 0;
             }
@@ -97,23 +110,30 @@ body {
                 display: inline-block;
                 left: 30px;
                 background-color: whitesmoke;
-                text-transform: uppercase;
-                font-weight: 600;
+                color: $color-green;
+                font-weight: 300;
+                padding: 0 20px;
             }
 
             .modal-action-bar {
                 position: absolute;
-                right: 0;
-                top: 0;
+                right: 25px;
+                top: 5px;
                 height: 100%;
 
                 button.close {
                     cursor: pointer;
-                    background: #e88b81;
                     border: 0;
-                    width: 40px;
-                    height: 40px;
-                    color: #fff;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    background: whitesmoke;
+                    font-size: 1.5em;
+
+                    &:hover {
+                        color: #fff;
+                        background: #e88b81;
+                    }
                 }
             }
         }
