@@ -14,7 +14,7 @@ declare var $: any;
             <div class="modal-header">
                 <h4 class="modal-title">{{title}}</h4>
                 <div class="modal-action-bar">
-                    <button *ngIf="closeButton" type="button" class="close" aria-label="Close" (click)="InnerModaleActiveModal.dismiss('Cross click')">
+                    <button *ngIf="closeButton" type="button" class="close" aria-label="Close" (click)="InnerModaleActiveModal.dismiss()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
