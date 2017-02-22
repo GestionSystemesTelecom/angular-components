@@ -5,7 +5,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
   template: `
     <gst-modal id="AnExpliciteId" [title]="modalTitle">
       <h1>A component inside a Modal</h1>
-      <button (click)="activeModal.close()">Close</button>
+      <button (click)="activeModal.close('Action closed modal')">Close</button>
     </gst-modal>
   `
 })

@@ -3,15 +3,20 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   template: `
-    <gst-modal id="edit-user" i18n-title [title]="'Édition utilisateur'">
+    <gst-modal id="lazy-modal-component" i18n-title [title]="'Lazy Modal'">
         <h1>Lazy Modal Component</h1>
-        <button (click)="activeModal.close()">Close</button>
+        <button (click)="onClose()">Close</button>
     </gst-modal>
   `
 })
 export class LazyModalComponent {
 
-  constructor(
-    public activeModal: NgbActiveModal) { }
+    public aProperty: string = 'a';
+
+    constructor(public activeModal: NgbActiveModal) { }
+
+    public onClose() {
+        this.activeModal.close(`aProperty : ${this.aProperty}`);
+    }
 
 }

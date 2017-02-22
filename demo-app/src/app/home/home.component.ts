@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { InsideModalComponent } from './insidemodal.component';
 
@@ -10,14 +10,9 @@ import { InsideModalComponent } from './insidemodal.component';
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   templateUrl: './home.component.html'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   // TypeScript public modifiers
   constructor(private ngbModal: NgbModal) {}
-
-  public ngOnInit() {
-    console.log('hello `Home` component');
-    // this.title.getData().subscribe(data => this.data = data);
-  }
 
   public openModal() {
         const modalRef = this.ngbModal.open(InsideModalComponent, { keyboard: false, backdrop: false });
@@ -28,8 +23,8 @@ export class HomeComponent implements OnInit {
                 console.log(res);
             })
             .catch((res) => {
-                console.error(res);
-            });
+              console.log('dismiss');
+             });
     }
 
   public submitState(value: string) {

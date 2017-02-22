@@ -11,18 +11,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
       <template ngbModalContainer></template>
     </div>
     <nav>
-      <a [routerLink]=" ['./'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Index
-      </a>
       <a [routerLink]=" ['./home'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Home
-      </a>
+        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">Home</a>
       <a [routerLink]=" ['./lazy-town'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Lazy Module
-      </a>
+        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">Lazy Module</a>
     </nav>
 
     <main>

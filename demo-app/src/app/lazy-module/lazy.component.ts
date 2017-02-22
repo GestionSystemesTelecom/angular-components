@@ -15,12 +15,13 @@ export class LazyComponent {
 
     public onOpen() {
         let modalRef = this.ngbModal.open(LazyModalComponent, { keyboard: false, backdrop: false });
+        modalRef.componentInstance.aProperty = 'changed';
         modalRef.result
             .then((res) => {
                 console.log(res);
             })
-            .catch((res) => {
-                console.error(res);
+            .catch(() => {
+                console.log('dismiss');
             });
     }
 

@@ -10,8 +10,8 @@ exports.config = {
 
   // use `npm run e2e`
   specs: [
-    helpers.root('src/**/**.e2e.ts'),
-    helpers.root('src/**/*.e2e.ts')
+    helpers.root('demo-app/src/**/**.e2e.ts'),
+    helpers.root('demo-app/src/**/*.e2e.ts')
   ],
   exclude: [],
 
@@ -30,6 +30,10 @@ exports.config = {
 
   capabilities: {
     'browserName': 'chrome',
+    'loggingPrefs': {
+          'driver': 'INFO',
+          'browser': 'INFO'
+    },
     'chromeOptions': {
       'args': ['show-fps-counter=true']
     }
