@@ -31,7 +31,7 @@ module.exports = function (config) {
      */
     files: [
       { pattern: './config/spec-bundle.js', watched: false },
-      { pattern: './src/assets/**/*', watched: false, included: false, served: true, nocache: false }
+      //{ pattern: './demo-app/src/assets/**/*', watched: false, included: false, served: true, nocache: false }
     ],
 
     /*
@@ -67,7 +67,7 @@ module.exports = function (config) {
       noInfo: true,
       // and use stats to turn off verbose output
       stats: {
-        // options i.e. 
+        // options i.e.
         chunks: false
       }
     },

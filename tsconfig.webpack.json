@@ -26,8 +26,10 @@
   "exclude": [
     "node_modules",
     "dist",
-    "src/**/*.spec.ts",
-    "src/**/*.e2e.ts"
+    "components/**/*.spec.ts",
+    "components/**/*.e2e.ts",
+    "demo-app/**/*.spec.ts",
+    "demo-app/**/*.e2e.ts"
   ],
   "awesomeTypescriptLoaderOptions": {
     "forkChecker": true,
