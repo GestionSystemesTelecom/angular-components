@@ -1,7 +1,7 @@
-$media-query-tablet: 'only screen and (max-width: 1440px)';
-$media-query-phone: 'only screen and (max-device-width: 480px), (max-width: 911px)';
 $color-green: #48a770;
 $color-grey: #d9dde5;
+$media-query-tablet: 'only screen and (max-width: 1440px)';
+$media-query-phone: 'only screen and (max-device-width: 480px), (max-width: 911px)';
 
 body {
     &.gst-modal-open {
