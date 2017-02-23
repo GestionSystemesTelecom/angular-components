@@ -1,5 +1,7 @@
 # GST Component for angular
 
+[![Build Status](https://travis-ci.org/GestionSystemesTelecom/angular-components.svg?branch=master)](https://travis-ci.org/GestionSystemesTelecom/angular-components)
+
 Graphical components for Angular >= 2.x.
 
 ## Component
