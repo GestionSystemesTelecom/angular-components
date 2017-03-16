@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal.component';
+import { GSTModal } from './modal.service';
 
 import * as $ from 'jquery';
 
@@ -18,7 +19,7 @@ export class ModalModule {
     public static forRoot(): ModuleWithProviders {
         return {
             ngModule: ModalModule,
-            providers: [NgbModule]
+            providers: [NgbModule, GSTModal]
         };
     }
 }

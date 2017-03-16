@@ -12,7 +12,7 @@ import { ModalModule } from '../../../../components';
     imports: [
         CommonModule,
         LazyRoutingModule,
-        ModalModule
+        ModalModule.forRoot()
     ],
     declarations: [
         LazyComponent,

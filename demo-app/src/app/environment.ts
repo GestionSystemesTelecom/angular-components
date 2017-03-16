@@ -1,15 +1,12 @@
 // Angular 2
-import {
-  enableDebugTools,
-  disableDebugTools
-} from '@angular/platform-browser';
-import {
-  ApplicationRef,
-  enableProdMode
-} from '@angular/core';
+import { enableDebugTools, disableDebugTools } from '@angular/platform-browser';
+import { ApplicationRef, enableProdMode } from '@angular/core';
+import { GSTModal } from '../../../components/modal/index';
+
 // Environment Providers
 let PROVIDERS: any[] = [
-  // common env directives
+    // common env directives
+    GSTModal
 ];
 
 // Angular debug tools in the dev console

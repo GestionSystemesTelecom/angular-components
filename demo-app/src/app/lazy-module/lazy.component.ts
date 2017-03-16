@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { GSTModal } from '../../../../components/modal';
 import { LazyModalComponent } from './lazy-modal.component';
 
 @Component({
@@ -11,10 +12,10 @@ import { LazyModalComponent } from './lazy-modal.component';
 })
 export class LazyComponent {
 
-    constructor(private ngbModal: NgbModal) { }
+    constructor(private gstModal: GSTModal) { }
 
     public onOpen() {
-        let modalRef = this.ngbModal.open(LazyModalComponent, { keyboard: false, backdrop: false });
+        let modalRef = this.gstModal.open(LazyModalComponent);
         modalRef.componentInstance.aProperty = 'changed';
         modalRef.result
             .then((res) => {

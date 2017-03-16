@@ -7,9 +7,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     './app.component.css'
   ],
   template: `
-    <div class="modal-outer-template-div">
-      <template ngbModalContainer></template>
-    </div>
+    <div class="modal-outer-template-div"></div>
     <nav>
       <a [routerLink]=" ['./home'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">Home</a>

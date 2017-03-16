@@ -4,7 +4,8 @@ $media-query-tablet: 'only screen and (max-width: 1440px)';
 $media-query-phone: 'only screen and (max-device-width: 480px), (max-width: 911px)';
 
 body {
-    &.gst-modal-open {
+    &.gst-modal-open,
+    &.modal-open {
         overflow: hidden;
     }
 }
@@ -30,13 +31,13 @@ body {
     opacity: 0;
 }
 
-.modal-outer-template-div {
+ngb-modal-window {
     position: fixed;
     z-index: 200;
-
-    &:empty {
-        display: none;
-    }
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
 }
 
 .modal {

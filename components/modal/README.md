@@ -45,9 +45,7 @@ module.exports = function (options) {
 * Add modals container to AppComponent (outer div is mandatory)
 
 ```html
-<div class="modal-outer-template-div">
-    <template ngbModalContainer></template>
-</div>
+<div class="modal-outer-template-div"></div>
 ```
 
 ## Creation of the inner modal component (ex: MyInnerModalComponent)
@@ -84,19 +82,19 @@ entryComponents: [ // Components that be included in the modal
 * If you want to open the modal, you need to access the modal service
 
 ```typescript
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { GSTModal } from 'gst-components';
 import { MyInnerModalComponent } from './MyInnerModal.component';
 
 @Component({
   // ...
 })
 export class HomeComponent {
-    constructor(private ngbModal: NgbModal) {}
+    constructor(private gstModal: GSTModal) {}
 
     public openModal() {
         // Use the open function from the NgbModal service whith the MyInnerModalComponent as first parameter
         // To see the list of all secondary parameters, see https://github.com/ng-bootstrap/ng-bootstrap/blob/master/src/modal/modal.ts
-        const modalRef = this.ngbModal.open(MyInnerModalComponent, { keyboard: false, backdrop: false });
+        const modalRef = this.gstModal.open(MyInnerModalComponent, { size: 'sm' });
         // Set a custom field defined in the MyInnerModalComponent
         modalRef.componentInstance.CustomField = 'value';
 
