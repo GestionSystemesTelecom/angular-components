@@ -7,7 +7,7 @@ declare var $: any;
 
 @Component({
     selector: 'gst-modal',
-    styleUrls: ['./modal.scss'],
+    styleUrls: ['./modal.css'],
     encapsulation: ViewEncapsulation.None,
     template: `
         <div class="modal-outer modal-draggable">
