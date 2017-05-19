@@ -32,6 +32,10 @@ exports.config = {
 
   capabilities: {
     'browserName': 'chrome',
+    'loggingPrefs': { // Required for functional testing
+          'driver': 'INFO',
+          'browser': 'INFO'
+    },
     'chromeOptions': {
       'args': ['show-fps-counter=true']
     }

@@ -75,7 +75,7 @@
   "dependencies": {
     "jquery": "^3.2.1",
     "@types/jquery": "^2.0.45",
-    "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.24"
+    "@ng-bootstrap/ng-bootstrap": "1.0.0-alpha.26"
   },
   "devDependencies": {
     "@angular/animations": "~4.1.3",

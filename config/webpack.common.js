@@ -294,7 +294,7 @@ module.exports = function (options) {
        * See: https://www.npmjs.com/package/copy-webpack-plugin
        */
       new CopyWebpackPlugin([
-        { from: 'demo-app/src/assets', to: 'assets' }
+        // { from: 'demo-app/src/assets', to: 'assets' }
       ],
         isProd ? { ignore: [ 'mock-data/**/*' ] } : undefined
       ),
