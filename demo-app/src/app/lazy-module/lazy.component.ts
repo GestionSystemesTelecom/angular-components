@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-// import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GSTModal } from '../../../../components/modal';
 import { LazyModalComponent } from './lazy-modal.component';
 
@@ -25,5 +24,4 @@ export class LazyComponent {
                 console.log('dismiss');
             });
     }
-
 }

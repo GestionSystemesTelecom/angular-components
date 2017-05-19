@@ -5,15 +5,14 @@ interface JQuery {
 }
 
 // tslint:disable-next-line:no-shadowed-variable
-(function ($) {
+(($) => {
     $.fn.drag = function(opt) {
         opt = $.extend({handle: '', cursor: 'move'}, opt);
 
         let $el = this;
         if (opt.handle === '') {
             $el = this;
-        }
-        else {
+        } else {
             $el = this.find(opt.handle);
         }
 
@@ -21,8 +20,7 @@ interface JQuery {
             let $drag;
             if (opt.handle === '') {
                 $drag = $(this).addClass('draggable');
-            }
-            else {
+            } else {
                 $drag = $(this).addClass('active-handle').parent().addClass('draggable');
             }
 
@@ -37,7 +35,7 @@ interface JQuery {
             let posY = $drag.offset().top + drgH - e.pageY;
             let posX = $drag.offset().left + drgW - e.pageX;
 
-            $drag.css('z-index', 1000).parents().on('mousemove', function(ef) {
+            $drag.css('z-index', 1000).parents().on('mousemove', (ef) => {
                 let wdth = $(window).width() - 17; // $(this).parents('.modal-content')[0]['clientWidth'];
 
                 $('.draggable').offset({

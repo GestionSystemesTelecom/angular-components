@@ -8,7 +8,9 @@ var helpers = require('./helpers');
 exports.config = {
   baseUrl: 'http://localhost:3000/',
 
-  // use `npm run e2e`
+  /**
+   * Use `npm run e2e`
+   */
   specs: [
     helpers.root('demo-app/src/**/**.e2e.ts'),
     helpers.root('demo-app/src/**/*.e2e.ts')

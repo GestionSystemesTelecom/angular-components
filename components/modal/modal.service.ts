@@ -5,7 +5,7 @@ import { NgbModal, NgbModalRef, NgbModalOptions } from '@ng-bootstrap/ng-bootstr
 export class GSTModal {
     constructor(public modalService: NgbModal) { }
 
-    public open (content: any, options?: NgbModalOptions): NgbModalRef {
+    public open(content: any, options?: NgbModalOptions): NgbModalRef {
         options = $.extend({
             backdrop: false,
             container: '.modal-outer-template-div',

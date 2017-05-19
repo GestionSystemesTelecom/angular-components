@@ -21,14 +21,13 @@
     "no-forward-ref": true,
     "no-input-rename": true,
     "no-output-rename": true,
-    "pipe-naming": [true, "camelCase", "my"],
+    "pipe-naming": [true, "camelCase", ""],
     "templates-use-public": true,
     "use-host-property-decorator": true,
     "use-input-property-decorator": true,
     "use-life-cycle-interface": true,
     "use-output-property-decorator": true,
     "use-pipe-transform-interface": true,
-    "only-arrow-functions": [false, "allow-declarations"],
     // General
     "no-console": [true,
       "time",
@@ -55,6 +54,6 @@
       "ban-keywords",
       "check-format"
     ],
-    "one-line": [false]
+    "prefer-const": false
   }
 }

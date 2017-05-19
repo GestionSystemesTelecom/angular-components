@@ -39,11 +39,10 @@ export class ModalComponent implements OnInit {
             handle: '.modal-header'
         });
 
-        $('.modal-outer-template-div').bind('DOMSubtreeModified', function (this) {
+        $('.modal-outer-template-div').bind('DOMSubtreeModified', () => {
             if ($('.modal-outer-template-div').find('.modal').length > 0) {
                 $('body').addClass('gst-modal-open');
-            }
-            else {
+            } else {
                 $('body').removeClass('gst-modal-open');
             }
         });
