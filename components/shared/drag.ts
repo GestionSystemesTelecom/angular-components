@@ -1,4 +1,4 @@
-declare var $: JQueryStatic;
+declare var $: any;
 
 interface JQuery {
    drag(opt?: any);

@@ -4,8 +4,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal.component';
 import { GSTModal } from './modal.service';
 
-import * as $ from 'jquery';
-
 @NgModule({
     imports: [
         CommonModule,

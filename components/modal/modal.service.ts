@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { NgbModal, NgbModalRef, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
+declare var $: any;
+
 @Injectable()
 export class GSTModal {
     constructor(public modalService: NgbModal) { }
