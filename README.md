@@ -32,3 +32,10 @@ Nothing really heavy, just some components that we can't found yet
 
 * [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap)
 * [jquery](https://github.com/jquery/jquery)
+
+## Build package for NPM
+
+```bash
+npm run build:component
+npm publish dist
+```
