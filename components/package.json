@@ -1,0 +1,36 @@
+{
+  "name": "gst-components",
+  "version": "0.0.1-beta.10",
+  "description": "Set of Angular components",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GestionSystemesTelecom/angular-components"
+  },
+  "keywords": [
+    "Anguar",
+    "GST",
+    "Components"
+  ],
+  "homepage": "https://github.com/GestionSystemesTelecom/angular-components",
+  "license": "MIT",
+  "author": "Valérian Girard<valerian.girard@cfast-web.fr>",
+  "contributors": [
+    {
+      "name": "Jérémy Bolzonella",
+      "email": "jeremy.bolzonella@cfast-web.fr"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/GestionSystemesTelecom/angular-components/issues"
+  },
+  "main": "gst-components.umd.js",
+  "module": "gst-components.js",
+  "jsnext:main": "gst-components.js",
+  "typings": "gst-components.d.ts",
+  "peerDependencies": {
+    "@angular/core": "^4.3.5",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.1",
+    "@types/jquery": "^3.2.11",
+    "jquery": "^3.2.1"
+  }
+}

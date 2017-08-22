@@ -2,14 +2,15 @@
   "name": "gst-components",
   "version": "0.0.1-beta.10",
   "description": "Set of Angular components",
-  "main": "index.ts",
+  "main": "build/gst-components.js",
+  "types": "build/gst-components.d.ts",
   "scripts": {
-    "build:aot:prod": "npm run clean:dist && npm run clean:aot && cross-env BUILD_AOT=1 npm run webpack -- --config config/webpack.prod.js  --progress --profile --bail",
-    "build:aot": "npm run build:aot:prod",
-    "build:dev": "npm run clean:dist && npm run webpack -- --config config/webpack.dev.js --progress --profile",
-    "build:docker": "npm run build:prod && docker build -t angular2-webpack-start:latest .",
-    "build:prod": "npm run clean:dist && npm run webpack -- --config config/webpack.prod.js  --progress --profile --bail",
-    "build": "npm run build:dev",
+    "build:component": "gulp build",
+    "build:demo:aot:prod": "npm run clean:dist && npm run clean:aot && cross-env BUILD_AOT=1 npm run webpack -- --config config/webpack.prod.js  --progress --profile --bail",
+    "build:demo:aot": "npm run build:aot:prod",
+    "build:demo:dev": "npm run clean:dist && npm run webpack -- --config config/webpack.dev.js --progress --profile",
+    "build:demo": "npm run build:dev",
+    "build:demo:npm": "npm run clean:dist && npm run webpack -- --config config/webpack.build.js  --progress --profile --bail",
     "ci:aot": "npm run lint && npm run test && npm run build:aot && npm run e2e",
     "ci:jit": "npm run lint && npm run test && npm run build:prod && npm run e2e",
     "ci:nobuild": "npm run lint && npm test && npm run build:aot && npm run e2e",
@@ -18,17 +19,13 @@
     "ci": "npm run ci:testall",
     "clean:dll": "npm run rimraf -- dll",
     "clean:aot": "npm run rimraf -- compiled",
-    "clean:dist": "npm run rimraf -- dist",
+    "clean:dist": "npm run rimraf -- dist build",
     "clean:install": "npm set progress=false && npm install",
     "clean": "npm cache clean && npm run rimraf -- node_modules doc coverage dist compiled dll",
-    "docker": "docker",
     "docs": "npm run typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./src/",
     "e2e:live": "npm-run-all -p -r server:prod:ci protractor:live",
     "e2e:travis": "npm-run-all -p -r server:prod:ci protractor:delay",
     "e2e": "npm-run-all -p -r server:prod:ci protractor",
-    "github-deploy:dev": "npm run webpack -- --config config/webpack.github-deploy.js --progress --profile --env.githubDev",
-    "github-deploy:prod": "npm run webpack -- --config config/webpack.github-deploy.js --progress --profile --env.githubProd",
-    "github-deploy": "npm run github-deploy:dev",
     "lint": "npm run tslint \"src/**/*.ts\"",
     "node": "node",
     "postinstall": "npm run webdriver:update",
@@ -70,12 +67,15 @@
   "license": "MIT",
   "author": "Valérian Girard<valerian.girard@cfast-web.fr>",
   "contributors": [
-    {"name": "Jérémy Bolzonella", "email": "jeremy.bolzonella@cfast-web.fr"}
+    {
+      "name": "Jérémy Bolzonella",
+      "email": "jeremy.bolzonella@cfast-web.fr"
+    }
   ],
   "dependencies": {
-    "jquery": "^3.2.1",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.1",
     "@types/jquery": "^3.2.11",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.1"
+    "jquery": "^3.2.1"
   },
   "devDependencies": {
     "@angular/animations": "~4.3.5",
@@ -96,8 +96,6 @@
     "reflect-metadata": "^0.1.10",
     "rxjs": "5.4.3",
     "zone.js": "~0.8.16",
-
-
     "@angular/compiler-cli": "~4.3.5",
     "@types/hammerjs": "^2.0.34",
     "@types/jasmine": "2.5.53",
@@ -159,7 +157,14 @@
     "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-server": "~2.7.1",
     "webpack-dll-bundles-plugin": "^1.0.0-beta.5",
-    "webpack-merge": "~4.1.0"
+    "webpack-merge": "~4.1.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rollup": "^2.11.0",
+    "rollup": "^0.41.6",
+    "run-sequence": "^1.2.2",
+    "node-sass-tilde-importer": "^1.0.0"
   },
   "repository": {
     "type": "git",
