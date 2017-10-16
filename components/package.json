@@ -1,6 +1,6 @@
 {
   "name": "gst-components",
-  "version": "0.0.1-beta.10",
+  "version": "0.0.1-beta.14",
   "description": "Set of Angular components",
   "repository": {
     "type": "git",
@@ -27,12 +27,12 @@
   "module": "gst-components.js",
   "jsnext:main": "gst-components.js",
   "typings": "gst-components.d.ts",
-  "peerDependencies": {
+  "dependencies": {
     "@angular/core": "^2.4.0 || ^4.0.0",
-    "@angular/common": "^2.4.0 || ^4.0.05",
+    "@angular/common": "^2.4.0 || ^4.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
-    "@types/jquery": "^3.2.11",
-    "jquery": "^3.2.1",
-    "rxjs": "5.4.3"
+    "@types/jquery": "^3.0.0",
+    "jquery": "^3.0.0",
+    "rxjs": "^5.0.0"
   }
 }
