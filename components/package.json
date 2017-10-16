@@ -28,9 +28,11 @@
   "jsnext:main": "gst-components.js",
   "typings": "gst-components.d.ts",
   "peerDependencies": {
-    "@angular/core": "^4.3.5",
-    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.1",
+    "@angular/core": "^2.4.0 || ^4.0.0",
+    "@angular/common": "^2.4.0 || ^4.0.05",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
     "@types/jquery": "^3.2.11",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "rxjs": "5.4.3"
   }
 }

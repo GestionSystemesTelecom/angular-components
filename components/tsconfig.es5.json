@@ -6,10 +6,22 @@
     "baseUrl": ".",
     "stripInternal": true,
     "emitDecoratorMetadata": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "outDir": "../build",
     "rootDir": ".",
+    "sourceMap": true,
+    "inlineSources": true,
+    "paths": {
+      "@angular/core": ["node_modules/@angular/core"],
+      "@angular/common": ["node_modules/@angular/common"],
+      "@types/jquery": ["node_modules/@types/jquery"],
+      "jquery": ["node_modules/jquery"],
+      "@ng-bootstrap/ng-bootstrap": ["node_modules/@ng-bootstrap/ng-bootstrap"],
+      "rxjs/*": ["node_modules/rxjs/*"]
+    },
     "lib": [
       "es2015",
       "dom"

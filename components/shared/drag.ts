@@ -1,12 +1,12 @@
 declare var $: any;
 
 interface JQuery {
-   drag(opt?: any);
+   drag(opt?: any): any;
 }
 
 // tslint:disable-next-line:no-shadowed-variable
 (($) => {
-    $.fn.drag = function(opt) {
+    $.fn.drag = function(opt: any) {
         opt = $.extend({handle: '', cursor: 'move'}, opt);
 
         let $el = this;
@@ -16,26 +16,26 @@ interface JQuery {
             $el = this.find(opt.handle);
         }
 
-        return $el.css('cursor', opt.cursor).on('mousedown', function(e) {
-            let $drag;
+        return $el.css('cursor', opt.cursor).on('mousedown', function(e: any) {
+            let $drag: any;
             if (opt.handle === '') {
                 $drag = $(this).addClass('draggable');
             } else {
                 $drag = $(this).addClass('active-handle').parent().addClass('draggable');
             }
 
-            $(window).resize(function(this) {
+            $(window).resize(function(this: any) {
                 $drag.css('top', '');
                 $drag.css('left', '');
             });
 
-            let zIdx = $drag.css('z-index');
-            let drgH = $drag.outerHeight();
-            let drgW = $drag.outerWidth();
-            let posY = $drag.offset().top + drgH - e.pageY;
-            let posX = $drag.offset().left + drgW - e.pageX;
+            let zIdx: number = $drag.css('z-index');
+            let drgH: number = $drag.outerHeight();
+            let drgW: number = $drag.outerWidth();
+            let posY: number = $drag.offset().top + drgH - e.pageY;
+            let posX: number = $drag.offset().left + drgW - e.pageX;
 
-            $drag.css('z-index', 1000).parents().on('mousemove', (ef) => {
+            $drag.css('z-index', 1000).parents().on('mousemove', (ef: any) => {
                 let wdth = $(window).width() - 17; // $(this).parents('.modal-content')[0]['clientWidth'];
 
                 $('.draggable').offset({
@@ -48,7 +48,7 @@ interface JQuery {
             });
             e.preventDefault(); // disable selection
         })
-        .on('mouseup', function(this) {
+        .on('mouseup', function(this: any) {
             if (opt.handle === '') {
                 $(this).removeClass('draggable');
             } else {

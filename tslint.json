@@ -41,6 +41,7 @@
     "no-string-literal": false,
     "no-use-before-declare": true,
     "object-literal-sort-keys": false,
+    //"ban-types": [true, ["String", "Use {string} instead."]],
     "ordered-imports": false,
     "quotemark": [
       true,

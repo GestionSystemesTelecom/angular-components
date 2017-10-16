@@ -30,9 +30,9 @@ import { isObject } from 'rxjs/util/isObject';
 })
 export class ReadOnlyPipe implements PipeTransform {
 
-    private result;
+    private result: any;
 
-    public transform(value: any, args: any[] = []): Object[] {
+    public transform(value: any, args: any[] = []): any {
         if (value == null) {
             return null;
         }
@@ -63,11 +63,11 @@ export class ReadOnlyPipe implements PipeTransform {
         return this.result;
     }
 
-    private manageObjectList(objList, depth = 0, into = 0) {
-        let keyArr = Object.keys(objList);
-        let arrRes = {};
+    private manageObjectList(objList: any, depth: number = 0, into: number = 0) {
+        let keyArr: any = Object.keys(objList);
+        let arrRes: any = {};
 
-        keyArr.forEach((key) => {
+        keyArr.forEach((key: any) => {
 
             if (this.isCyclic(objList[key])) {
 
@@ -84,10 +84,10 @@ export class ReadOnlyPipe implements PipeTransform {
         return arrRes;
     }
 
-    private isCyclic(obj) {
-        let seenObjects = [];
+    private isCyclic(obj: any) {
+        let seenObjects: any = [];
 
-        let detect = (o) => {
+        let detect: any = (o: any) => {
             if (typeof o === 'object') {
                 if (seenObjects.indexOf(o) !== -1) {
                     return true;
@@ -105,12 +105,12 @@ export class ReadOnlyPipe implements PipeTransform {
         return detect(obj);
     }
 
-    private manageArray(value: any, args: any[] = []): Object[] {
-        let keyArr = Object.keys(value);
-        let dataArr = [];
-        let keyName = args[0] ? args[0] : 'key';
+    private manageArray(value: any, args: any[] = []): any {
+        let keyArr: any = Object.keys(value);
+        let dataArr: any = [];
+        let keyName: any = args[0] ? args[0] : 'key';
 
-        keyArr.forEach((key) => {
+        keyArr.forEach((key: any) => {
             if (!isObject(value[key])) {
                 value[key] = { value: value[key] };
             }
@@ -119,7 +119,7 @@ export class ReadOnlyPipe implements PipeTransform {
         });
 
         if (args[1]) {
-            dataArr.sort((a: Object, b: Object): number => {
+            dataArr.sort((a: any, b: any): number => {
                 return a[keyName] > b[keyName] ? 1 : -1;
             });
         }
