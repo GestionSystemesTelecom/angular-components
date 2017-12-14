@@ -34,7 +34,8 @@ exports.config = {
     'browserName': 'chrome',
     'chromeOptions': {
       'args': ['show-fps-counter=true']
-    }
+    },
+    'loggingPrefs': { 'driver': "INFO", 'browser': "INFO" }
   },
 
   onPrepare: function() {
