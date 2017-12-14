@@ -12,7 +12,7 @@ import { SecondModalComponent } from './home/secondmodal.component';
 /*
  * Platform and Environment providers/directives/pipes
  */
-import { ENV_PROVIDERS } from './environment';
+import { environment } from './environment';
 import { AppRoutingModule } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
@@ -40,7 +40,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         AppRoutingModule,
     ],
     providers: [ // expose our Services and Providers into Angular's dependency injection
-        ENV_PROVIDERS
+        environment.ENV_PROVIDERS
     ],
     entryComponents: [ // Components that be included in the modal
         InsideModalComponent,
