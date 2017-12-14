@@ -91,7 +91,6 @@ describe(`ReadOnly.pipe`, () => {
         expect(res[2]).toEqual({ a: 'a3', b: 'b3', c: 'c3' });
     });
 
-
     it('Should transform complex Map into array', () => {
 
         let cyclicObj = {a: 'a1', b: 'b2'};

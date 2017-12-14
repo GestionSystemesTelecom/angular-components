@@ -3,7 +3,7 @@
  */
 
 module.exports = function (config) {
-  var testWebpackConfig = require('./webpack.test.js')({ env: 'test' });
+  var testWebpackConfig = require('./config/webpack.test.js')({ env: 'test' });
 
   var configuration = {
 
@@ -35,14 +35,14 @@ module.exports = function (config) {
        */
       files: [
           { pattern: './config/spec-bundle.js', watched: false },
-          { pattern: './src/assets/**/*', watched: false, included: false, served: true, nocache: false }
+          //{ pattern: './src/assets/**/*', watched: false, included: false, served: true, nocache: false }
       ],
 
       /**
        * By default all assets are served at http://localhost:[PORT]/base/
        */
       proxies: {
-          "/assets/": "/base/src/assets/"
+          "/assets/": "/demo-app/src/assets/"
       },
 
       /**
@@ -130,7 +130,7 @@ module.exports = function (config) {
           },
           ChromeTravisCi: {
               base: 'Chrome',
-              /* flags: ['--no-sandbox'] */
+              flags: ['--no-sandbox']
           }
       },
 
