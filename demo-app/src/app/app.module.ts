@@ -5,7 +5,7 @@ import { NgModule, ApplicationRef } from '@angular/core';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 
-import { ModalModule, ModalComponent } from '../../../components';
+import { ModalModule, ModalComponent, BusyModule } from '../../../components';
 
 import { InsideModalComponent } from './home/insidemodal.component';
 import { SecondModalComponent } from './home/secondmodal.component';
@@ -38,6 +38,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
         NgbModule.forRoot(),
         ModalModule.forRoot(),
         AppRoutingModule,
+        BusyModule,
     ],
     providers: [ // expose our Services and Providers into Angular's dependency injection
         environment.ENV_PROVIDERS

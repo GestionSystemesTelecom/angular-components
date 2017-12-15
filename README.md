@@ -7,6 +7,7 @@ Graphical components for Angular >= 2.x.
 ## Component
 
  * [Modal](Components/modal/README.md): extend the [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap) modal for integrating Angular component inside.
+ * [Busy looader](Components/busy/README.md): Loading indicator
 
 ## Usage
 
@@ -27,6 +28,8 @@ just run this command `npm install @types/jquery --save-dev` and everything woul
 Nothing really heavy, just some components that we can't found yet
 
 > The demo app si based on [AngularClass](https://github.com/AngularClass/angular2-webpack-starter) (big thanks !)
+
+> The loading indicator is based on [Angular 4+ Spin.js Demo App ](https://github.com/seanlmcgill/ng2spin/)
 
 ## Dependencies
 

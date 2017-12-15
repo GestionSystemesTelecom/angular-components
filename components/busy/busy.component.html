@@ -1,0 +1,9 @@
+<div class="ng2-busy"
+[@getbusy]="state"
+(@getbusy.start)="animation($event)"
+(@getbusy.done)="animation($event)"
+[style.display]="divStateHide ? 'none' : 'block'"
+[style.opacity]="divStateHide ? 0 : 1"
+>
+    <ng-content></ng-content>
+</div>

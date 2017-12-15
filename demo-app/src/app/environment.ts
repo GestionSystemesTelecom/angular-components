@@ -2,6 +2,7 @@
 import { enableDebugTools } from '@angular/platform-browser';
 import { ApplicationRef, NgModuleRef } from '@angular/core';
 import { GSTModal } from '../../../components/modal/index';
+import { BusyService } from '../../../components/busy/index';
 
 Error.stackTraceLimit = Infinity;
 require('zone.js/dist/long-stack-trace-zone');
@@ -26,6 +27,6 @@ export const environment = {
     return modRef;
   },
   ENV_PROVIDERS: [
-    GSTModal
+    GSTModal, BusyService
   ]
 };

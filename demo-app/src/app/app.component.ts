@@ -7,6 +7,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
     './app.component.css'
   ],
   template: `
+    <gst-busy>Some Loader</gst-busy>
     <div class="modal-outer-template-div"></div>
     <nav>
       <a [routerLink]=" ['./home'] "
