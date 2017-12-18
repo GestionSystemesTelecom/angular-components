@@ -101,6 +101,7 @@
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
     "gulp-rollup": "^2.15.0",
+    "rollup-plugin-local-resolve": "^1.0.7",
     "html-webpack-plugin": "^2.30.1",
     "ie-shim": "^0.1.0",
     "imports-loader": "^0.7.1",

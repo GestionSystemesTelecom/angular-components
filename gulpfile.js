@@ -6,7 +6,8 @@ var gulp = require('gulp'),
   rename = require('gulp-rename'),
   del = require('del'),
   runSequence = require('run-sequence'),
-  inlineResources = require('./tools/gulp/inline-resources');
+  inlineResources = require('./tools/gulp/inline-resources'),
+  localResolve = require('rollup-plugin-local-resolve');
 
 const rootFolder = path.join(__dirname);
 const srcFolder = path.join(rootFolder, 'components');
@@ -86,7 +87,7 @@ gulp.task('rollup:fesm', function () {
   return gulp.src(`${buildFolder}/**/*.js`)
     // transform the files here.
     .pipe(rollup({
-
+      plugins: [localResolve()],
       // Bundle's entry point
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#entry
       input: `${buildFolder}/index.js`,
@@ -96,6 +97,14 @@ gulp.task('rollup:fesm', function () {
       // This prevents errors like: 'path/file' does not exist in the hypothetical file system
       // when subdirectories are used in the `src` directory.
       allowRealFiles: true,
+
+      // The name to use for the module for UMD/IIFE bundles
+      // (required for bundles with exports)
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#modulename
+      name: 'gst-components',
+      // Export mode to use
+      // See https://github.com/rollup/rollup/wiki/JavaScript-API#exports
+      exports: 'named',
 
       // A list of IDs of modules that should remain external to the bundle
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#external
@@ -119,7 +128,7 @@ gulp.task('rollup:umd', function () {
   return gulp.src(`${buildFolder}/**/*.js`)
     // transform the files here.
     .pipe(rollup({
-
+      plugins: [localResolve()],
       // Bundle's entry point
       // See https://github.com/rollup/rollup/wiki/JavaScript-API#entry
       input: `${buildFolder}/index.js`,
