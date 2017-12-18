@@ -5,8 +5,8 @@ import { Subscription } from 'rxjs/Rx';
 
 @Component({
     selector: 'gst-busy',
-    styleUrls: ['./busy.component.css'],
-    templateUrl: './busy.component.html',
+    styles: [".ng2-busy { display: none; opacity: 0; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; text-align: center; z-index: 100000; background: rgba(0, 0, 0, 0.2); transition: all 0.5s ease-in-out; } "],
+    template: "<div class=\"ng2-busy\" [@getbusy]=\"state\" (@getbusy.start)=\"animation($event)\" (@getbusy.done)=\"animation($event)\" [style.display]=\"divStateHide ? 'none' : 'block'\" [style.opacity]=\"divStateHide ? 0 : 1\" > <ng-content></ng-content> </div>",
     animations: [
         trigger('getbusy', [
             state('show', style({

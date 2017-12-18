@@ -1,6 +1,5 @@
-# GST Component for angular
+# GST Component for angular [![npm][npm-image]][npm-url] [![Dependency Status][david-image]][david-url] [![Build Status][travis-image]][travis-url]
 
-[![Build Status](https://travis-ci.org/GestionSystemesTelecom/angular-components.svg?branch=master)](https://travis-ci.org/GestionSystemesTelecom/angular-components)
 
 Graphical components for Angular >= 2.x.
 
@@ -42,3 +41,11 @@ Nothing really heavy, just some components that we can't found yet
 npm run build:component
 npm publish dist
 ```
+
+
+[npm-url]: https://www.npmjs.com/package/gst-components
+[npm-image]: https://img.shields.io/npm/v/gst-components.svg
+[david-url]: https://david-dm.org/GestionSystemesTelecom/angular-components.svg
+[david-image]: https://img.shields.io/david/GestionSystemesTelecom/angular-components.svg
+[travis-url]: https://travis-ci.org/GestionSystemesTelecom/angular-components
+[travis-image]: https://travis-ci.org/GestionSystemesTelecom/angular-components.svg?branch=master

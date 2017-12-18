@@ -22,7 +22,8 @@ const rollupExternal = [
   '@types/jquery',
   'jquery',
   'rxjs',
-  'rxjs/util/isObject'
+  'rxjs/util/isObject',
+  'rxjs/add/operator/share'
 ];
 const rollupGlobal = {
   typescript: 'ts',
@@ -31,7 +32,8 @@ const rollupGlobal = {
   '@ng-bootstrap/ng-bootstrap': 'ng-bootstrap',
   '@ng-bootstrap/ng-bootstrap/index': 'ng-bootstrap',
   'jquery': '$',
-  'rxjs/util/isObject': 'Rx'
+  'rxjs/util/isObject': 'Rx',
+  'rxjs/add/operator/share': 'Rx'
 };
 
 /**
@@ -69,16 +71,11 @@ gulp.task('inline-resources', function () {
 *    compiled modules to the /build folder.
 */
 gulp.task('ngc', function () {
-  return ngc({
-    project: `${tmpFolder}/tsconfig.es5.json`
-  })
-    .then((exitCode) => {
-      if (exitCode === 1) {
-        // This error is caught in the 'compile' task by the runSequence method callback
-        // so that when ngc fails to compile, the whole compile process stops running
-        throw new Error('ngc compilation failed');
-      }
-    });
+  return ngc(['-p', `${tmpFolder}/tsconfig.es5.json`], (error) => {
+    if (error) {
+      throw new Error('ngc compilation failed: ' + error);
+    }
+  });
 });
 
 /**
@@ -108,9 +105,7 @@ gulp.task('rollup:fesm', function () {
       output: {
         // Format of generated bundle
         // See https://github.com/rollup/rollup/wiki/JavaScript-API#format
-
         sourceMap: false,
-
       }
     }))
     .pipe(gulp.dest(distFolder));
