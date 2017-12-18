@@ -1,6 +1,6 @@
 {
   "name": "gst-components",
-  "version": "0.0.1-beta.14",
+  "version": "0.0.1-beta.15",
   "description": "Set of Angular components",
   "main": "build/gst-components.js",
   "types": "build/gst-components.d.ts",
