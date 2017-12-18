@@ -5,8 +5,8 @@ Graphical components for Angular >= 2.x.
 
 ## Component
 
- * [Modal](Components/modal/README.md): extend the [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap) modal for integrating Angular component inside.
- * [Busy looader](Components/busy/README.md): Loading indicator
+ * [Modal](components/modal/README.md): extend the [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap) modal for integrating Angular component inside.
+ * [Busy looader](components/busy/README.md): Loading indicator
 
 ## Usage
 
