@@ -1,4 +1,4 @@
-# GST Component for angular [![npm][npm-image]][npm-url] [![Dependency Status][david-image]][david-url] [![Build Status][travis-image]][travis-url]
+# GST Component for angular
 
 Graphical components for Angular >= 4.x.
 
