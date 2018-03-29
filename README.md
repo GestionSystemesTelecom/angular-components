@@ -2,7 +2,7 @@
 
 Graphical components for Angular >= 4.x.
 
-## Component
+## Components
 
  * [Modal][gst-modal-github-url]: extend the [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootstrap) modal for integrating Angular component inside.
  * [Busy looader]([gst-busy-github-url]): Loading indicator
