@@ -63,5 +63,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 [david-image]: https://img.shields.io/david/GestionSystemesTelecom/angular-components.svg
 [travis-url]: https://travis-ci.org/GestionSystemesTelecom/angular-components
 [travis-image]: https://travis-ci.org/GestionSystemesTelecom/angular-components.svg?branch=master
-[gst-modal-github-url]: https://github.com/GestionSystemesTelecom/angular-components/libs/src/modal/README.md
-[gst-busy-github-url]: https://github.com/GestionSystemesTelecom/angular-components/libs/src/busy/README.md
+[gst-modal-github-url]: https://github.com/GestionSystemesTelecom/angular-components/tree/master/libs/src/modal/README.md
+[gst-busy-github-url]: https://github.com/GestionSystemesTelecom/angular-components/tree/master/libs/src/busy/README.md

@@ -58,5 +58,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-[gst-modal-github-url]: https://github.com/GestionSystemesTelecom/angular-components/libs/src/modal/README.md
-[gst-busy-github-url]: https://github.com/GestionSystemesTelecom/angular-components/libs/src/busy/README.md
+[gst-modal-github-url]: https://github.com/GestionSystemesTelecom/angular-components/tree/master/libs/src/modal/README.md
+[gst-busy-github-url]: https://github.com/GestionSystemesTelecom/angular-components/tree/master/libs/src/busy/README.md
