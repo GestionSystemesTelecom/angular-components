@@ -1,19 +1,17 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation, Renderer2, Inject, OnDestroy } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import '../shared/drag';
-
-declare var $: any;
+import { DOCUMENT } from '@angular/common';
 
 @Component({
     selector: 'gst-modal',
     styleUrls: ['./modal.css'],
     encapsulation: ViewEncapsulation.None,
     template: `
-        <div class="modal-outer modal-draggable">
-            <div class="modal-header">
+        <div ngDraggable [bounds]="_document.body" [inBounds]="true" [handle]="myHandle" class="modal-outer modal-draggable onselect">
+            <div #myHandle class="modal-header">
                 <h4 class="modal-title">{{title}}</h4>
                 <div class="modal-action-bar">
-                    <button *ngIf="closeButton" type="button" class="close" aria-label="Close" (click)="InnerModaleActiveModal.dismiss()">
+                    <button *ngIf="closeButton" type="button" class="close" aria-label="Close" (click)="innerModaleActiveModal.dismiss()">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
@@ -24,26 +22,30 @@ declare var $: any;
         </div>
     `
 })
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit, OnDestroy {
 
     @Input() public title = 'Modal title';
     @Input() public closeButton = true;
+    private _document: any;
 
     // Documentation: https://ng-bootstrap.github.io/#/components/modal
-    constructor(public InnerModaleActiveModal: NgbActiveModal) {
+    constructor(
+        @Inject(DOCUMENT) document,
+        public innerModaleActiveModal: NgbActiveModal,
+        public renderer: Renderer2
+    ) {
+        this._document = document;
     }
 
     public ngOnInit() {
-        $('.modal-draggable').drag({
-            handle: '.modal-header'
-        });
+        this.renderer.addClass(this._document.body, 'gst-modal-open');
+        this.renderer.addClass(this._document.body, 'noselect');
+    }
 
-        $('.modal-outer-template-div').bind('DOMSubtreeModified', () => {
-            if ($('.modal-outer-template-div').find('.modal').length > 0) {
-                $('body').addClass('gst-modal-open');
-            } else {
-                $('body').removeClass('gst-modal-open');
-            }
-        });
+    public ngOnDestroy(): void {
+        if (this._document.querySelector('.modal') == null) {
+            this.renderer.removeClass(this._document.body, 'gst-modal-open');
+            this.renderer.removeClass(this._document.body, 'noselect');
+        }
     }
 }

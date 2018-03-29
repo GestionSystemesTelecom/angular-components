@@ -25,21 +25,6 @@ Modal provider based on [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootst
   })
 ```
 
-* Define jQuery for Webpack:
-
-```js
-module.exports = function (options) {
-    // ...
-    plugins: [
-        new ProvidePlugin({
-            jQuery: 'jquery',
-            $: 'jquery',
-            jquery: 'jquery'
-        }),
-    ]
- // ...
-```
-
 # Usage
 
 * Add modals container to AppComponent (outer div is mandatory)

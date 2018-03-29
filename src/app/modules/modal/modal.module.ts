@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './modal.component';
 import { GSTModal } from './modal.service';
+import { AngularDraggableModule } from 'angular2-draggable';
 
 @NgModule({
     imports: [
         CommonModule,
-        NgbModule
+        NgbModule,
+        AngularDraggableModule
     ],
     providers: [], // leave empty to avoid multiple instances
     declarations: [ModalComponent],
