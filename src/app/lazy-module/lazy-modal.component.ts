@@ -18,5 +18,4 @@ export class LazyModalComponent {
     public onClose() {
         this.activeModal.close(`aProperty : ${this.aProperty}`);
     }
-
 }

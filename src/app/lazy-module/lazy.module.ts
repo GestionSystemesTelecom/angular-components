@@ -5,7 +5,7 @@ import { LazyComponent } from './lazy.component';
 import { LazyModalComponent } from './lazy-modal.component';
 
 import { LazyRoutingModule } from './lazy-routing.module';
-import { ModalModule } from '../modules';
+import { ModalModule } from 'gst-components';
 
 @NgModule({
     imports: [

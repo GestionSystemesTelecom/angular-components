@@ -11,11 +11,11 @@ Features:
 
 # Installation
 
-* install library: `npm install gst-components`
+* install library: `npm install libs`
 * add module import declaration
 
 ```typescript
-import { BusyModule } from 'gst-components';
+import { BusyModule } from 'libs';
   @NgModule({
     imports: [
       BusyModule
@@ -35,7 +35,7 @@ When you need to fireup loading indicator, call the service `BusyService`.
 
 ```typescript
 import { Component } from '@angular/core';
-import { BusyService } from 'gst-components';
+import { BusyService } from 'libs';
 
 @Component({
 // ...

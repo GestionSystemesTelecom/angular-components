@@ -4,13 +4,13 @@ Modal provider based on [ng-bootstrap](https://github.com/ng-bootstrap/ng-bootst
 
 # Installation
 
-* install library: `npm install gst-components`
+* install library: `npm install libs`
 * add module import declaration
 
 ```typescript
   import { AppComponent } from './app.component';
   import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-  import { ModalModule } from 'gst-components';
+  import { ModalModule } from 'libs';
 
   @NgModule({
     declarations: [
@@ -67,7 +67,7 @@ entryComponents: [ // Components that be included in the modal
 * If you want to open the modal, you need to access the modal service
 
 ```typescript
-import { GSTModal } from 'gst-components';
+import { GSTModal } from 'libs';
 import { MyInnerModalComponent } from './MyInnerModal.component';
 
 @Component({

@@ -14,6 +14,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
-  }
+    ],
+    "paths": {
+      "gst-components": [
+        "./libs/src/index.ts"
+      ]
+    }
+  },
+  "exclude": [
+    ".ng_build"
+  ]
 }

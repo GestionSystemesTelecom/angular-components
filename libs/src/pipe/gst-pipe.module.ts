@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-
 import { ReadOnlyPipe } from './readonly.pipe';
 
 @NgModule({

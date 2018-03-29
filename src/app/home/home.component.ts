@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { InsideModalComponent } from './insidemodal.component';
-import { GSTModal, BusyService } from '../modules';
+import { BusyService, GSTModal } from 'gst-components';
+
 
 @Component({
     // The selector is what angular internally uses

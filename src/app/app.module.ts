@@ -12,8 +12,8 @@ import { AppRoutingModule } from './app.routes';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home';
 
-import { GSTModal, BusyService, ModalModule, BusyModule } from './modules';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalModule, BusyModule, GSTModal, BusyService } from 'gst-components';
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process

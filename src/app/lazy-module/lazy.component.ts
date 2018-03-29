@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { LazyModalComponent } from './lazy-modal.component';
-import { GSTModal } from '../modules';
+import { GSTModal } from 'gst-components';
 
 @Component({
     selector: 'app-gestion-utilisateur',

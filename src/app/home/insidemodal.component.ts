@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { SecondModalComponent } from './secondmodal.component';
-import { GSTModal } from '../modules';
+import { GSTModal } from 'gst-components';
 
 @Component({
   template: `
