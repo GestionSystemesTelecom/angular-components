@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation, Renderer2, Inject, OnDestroy } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation, Renderer2, Inject, OnDestroy, ElementRef } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { DOCUMENT } from '@angular/common';
 
@@ -7,7 +7,7 @@ import { DOCUMENT } from '@angular/common';
     styleUrls: ['./modal.css'],
     encapsulation: ViewEncapsulation.None,
     template: `
-        <div ngDraggable [bounds]="_document.body" [inBounds]="true" [handle]="myHandle" class="modal-outer modal-draggable onselect">
+        <div id="{{elRef.nativeElement.id}}_Modal" ngDraggable [handle]="myHandle" class="modal-outer modal-draggable onselect" (movingOffset)="onMoveEnd($event)">
             <div #myHandle class="modal-header">
                 <h4 class="modal-title">{{title}}</h4>
                 <div class="modal-action-bar">
@@ -32,7 +32,8 @@ export class ModalComponent implements OnInit, OnDestroy {
     constructor(
         @Inject(DOCUMENT) document,
         public innerModaleActiveModal: NgbActiveModal,
-        public renderer: Renderer2
+        public renderer: Renderer2,
+        public elRef: ElementRef
     ) {
         this._document = document;
     }
@@ -46,6 +47,35 @@ export class ModalComponent implements OnInit, OnDestroy {
         if (this._document.querySelector('.modal') == null) {
             this.renderer.removeClass(this._document.body, 'gst-modal-open');
             this.renderer.removeClass(this._document.body, 'noselect');
+        }
+    }
+
+    public onMoveEnd($event) {
+        let maxWidth = Math.max(
+            document.body.scrollWidth,
+            document.documentElement.scrollWidth,
+            document.body.offsetWidth,
+            document.documentElement.offsetWidth,
+            document.documentElement.clientWidth
+        );
+        let element = document.getElementById(this.elRef.nativeElement.id + '_Modal');
+        let x = element.offsetLeft + $event.x;
+        let y = element.offsetTop + $event.y;
+
+        let eventX = $event.x < -element.offsetLeft ? -element.offsetLeft : $event.x;
+        let eventY = $event.y < -element.offsetTop ? -element.offsetTop : $event.y;
+
+        if (y < 0) {
+            element.style.transform = 'translate(' + eventX + 'px, -' + element.offsetTop + 'px)';
+        }
+
+        if (x < 0) {
+            element.style.transform = 'translate(-' + element.offsetLeft + 'px, ' + eventY + 'px)';
+        }
+
+        if (x + element.offsetWidth > maxWidth) {
+
+            element.style.transform = 'translate(' + (maxWidth - element.offsetWidth - element.offsetLeft) + 'px, ' + eventY + 'px)';
         }
     }
 }
