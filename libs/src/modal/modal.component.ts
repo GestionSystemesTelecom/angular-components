@@ -74,7 +74,6 @@ export class ModalComponent implements OnInit, OnDestroy {
         }
 
         if (x + element.offsetWidth > maxWidth) {
-
             element.style.transform = 'translate(' + (maxWidth - element.offsetWidth - element.offsetLeft) + 'px, ' + eventY + 'px)';
         }
     }
