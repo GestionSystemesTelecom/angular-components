@@ -10,7 +10,7 @@ export class GSTModal {
         let def = {
             backdrop: false,
             container: '.modal-outer-template-div',
-            keyboard: true,
+            keyboard: false,
             size: '',
             windowClass: ''
         };
