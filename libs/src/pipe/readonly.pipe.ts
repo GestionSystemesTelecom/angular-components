@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isObject } from 'rxjs/util/isObject';
+import { isObject } from 'util';
 
 /**
  * Allow ngFor to iterate on object collection

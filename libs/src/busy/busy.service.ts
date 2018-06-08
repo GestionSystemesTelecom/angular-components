@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Observer } from 'rxjs/Observer';
-import 'rxjs/add/operator/share';
+import { Observer, Observable } from 'rxjs';
+import { share } from 'rxjs/operators';
 
 @Injectable()
 export class BusyService {
@@ -10,10 +9,11 @@ export class BusyService {
     private busyObserver: Observer<boolean>;
 
     constructor() {
-        this.busyObservable = new Observable<boolean>((observer) => {
+
+        this.busyObservable = (<any> new Observable<boolean>((observer) => {
                 this.busyObserver = observer;
             }
-        ).share();
+        )).pipe(share());
     }
 
     public show() {
