@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Demo App": {
+    "demo-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -22,8 +22,7 @@
             ],
             "styles": [
               "src/sass/styles.scss"
-            ],
-            "scripts": []
+            ]
           },
           "configurations": {
             "production": {
@@ -48,18 +47,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Demo App:build"
+            "browserTarget": "demo-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Demo App:build:production"
+              "browserTarget": "demo-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Demo App:build"
+            "browserTarget": "demo-app:build"
           }
         },
         "test": {
@@ -93,7 +92,7 @@
         }
       }
     },
-    "Demo App-e2e": {
+    "demo-app-e2e": {
       "root": "",
       "sourceRoot": "e2e",
       "projectType": "application",
@@ -102,7 +101,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "Demo App:serve"
+            "devServerTarget": "demo-app:serve"
           }
         },
         "lint": {
@@ -118,45 +117,35 @@
         }
       }
     },
-    "angular-components": {
+    "gst-components": {
       "root": "libs",
       "sourceRoot": "libs/src",
-      "projectType": "application",
+      "projectType": "library",
+      "prefix": "gst",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
-            "outputPath": "dist/",
-            "index": "libs/src/index.html",
-            "main": "libs/src/main.ts",
-            "tsConfig": "libs/src/tsconfig.app.json",
-            "assets": [],
-            "styles": [],
-            "scripts": []
+            "tsConfig": "libs/tsconfig.lib.json",
+            "project": "libs/ng-package.json"
           },
-          "configurations": {}
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "angular-components:build"
-          },
-          "configurations": {}
+          "configurations": {
+            "production": {
+              "project": "libs/ng-package.prod.json"
+            }
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-components:build"
+            "browserTarget": "gst-components:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "libs/src/../../src/test.js",
-            "karmaConfig": "./karma.conf.js",
-            "scripts": [],
-            "styles": [],
-            "assets": []
+            "karmaConfig": "./karma.conf.js"
           }
         },
         "lint": {
@@ -173,7 +162,7 @@
         }
       }
     },
-    "angular-components-e2e": {
+    "gst-components-e2e": {
       "root": "libs",
       "sourceRoot": "libs/e2e",
       "projectType": "application",
@@ -182,7 +171,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "angular-components:serve"
+            "devServerTarget": "gst-components:serve"
           }
         },
         "lint": {
@@ -199,14 +188,5 @@
       }
     }
   },
-  "defaultProject": "Demo App",
-  "schematics": {
-    "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "scss"
-    },
-    "@schematics/angular:directive": {
-      "prefix": "app"
-    }
-  }
+  "defaultProject": "demo-app"
 }

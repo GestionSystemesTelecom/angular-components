@@ -1,0 +1,2 @@
+[0613/095844.523:ERROR:process_reader_win.cc(123)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0613/095844.525:ERROR:exception_snapshot_win.cc(88)] thread ID 16944 not found in process

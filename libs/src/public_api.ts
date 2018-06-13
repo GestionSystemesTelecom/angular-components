@@ -1,4 +1,4 @@
-export { ModalModule, ModalComponent, GSTModal } from './modal';
-export { GSTPipeModule, ReadOnlyPipe } from './pipe';
-export { BusyComponent, BusyModule, BusyService } from './busy';
-export { extend } from './shared';
+export { ModalModule, ModalComponent, GSTModal } from './modal/index';
+export { GSTPipeModule, ReadOnlyPipe } from './pipe/index';
+export { BusyComponent, BusyModule, BusyService } from './busy/index';
+export { extend } from './shared/index';
