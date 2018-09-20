@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { NgModule, ApplicationRef } from '@angular/core';
-import { RouterModule, PreloadAllModules } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 
 import { InsideModalComponent } from './home/insidemodal.component';
 import { SecondModalComponent } from './home/secondmodal.component';
@@ -29,7 +28,7 @@ import { ModalModule, BusyModule, GSTModal, BusyService } from 'gst-components';
     imports: [ // import Angular's modules
         BrowserModule,
         FormsModule,
-        HttpModule,
+        HttpClientModule,
         NgbModule.forRoot(),
         ModalModule.forRoot(),
         AppRoutingModule,
